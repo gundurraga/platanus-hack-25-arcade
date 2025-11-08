@@ -210,7 +210,7 @@ const BENCH_HEIGHT = 30;
 const GOAL_WIDTH = 45;
 const GOAL_HEIGHT = 60;
 const DRONE_WIDTH = 32;
-const DRONE_HEIGHT = 20;
+const DRONE_HEIGHT = 12;
 
 // Obstacle Spawning
 const MULTI_SPAWN_RIVAL_SPACING = 40;
@@ -343,7 +343,6 @@ function isValidBallType(type) {
  */
 function getValidBallType(type) {
   if (!isValidBallType(type)) {
-    console.warn(`Invalid ball type: ${type}, using classic`);
     return BALL_TYPE_CLASSIC;
   }
   return type;
@@ -1043,7 +1042,7 @@ function create() {
     x: 150,
     y: GROUND_Y,
     width: 18,
-    height: 52,
+    height: 46,
     vx: 0,
     vy: 0,
     onGround: true,
@@ -1113,7 +1112,7 @@ function update(time, delta) {
  * @param {Phaser.Scene} sceneRef - Scene reference
  */
 function updateStartScreen(dt, sceneRef) {
-  gameTime += dt; // Keep time running for animations
+  // Don't increment gameTime on start screen - it affects game speed
   updateBackground(); // Keep clouds moving
 
   // Check for any key to start (Arrow keys or WASD)
@@ -3480,7 +3479,6 @@ function spawnFlyingObstacle() {
  */
 function shootBall(sceneRef) {
   if (ballTypesHeld.length === 0) {
-    console.warn("shootBall called with no balls held");
     return;
   }
 
