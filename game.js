@@ -204,7 +204,7 @@ const PLAYER_OBS_HEIGHT_BRAZIL = 65;
 const PLAYER_OBS_OVERLAP = 3;
 const PLAYER_OBS_HEIGHT_OFFSET_BRAZIL = 10;
 const BOTTLE_WIDTH = 10;
-const BOTTLE_HEIGHT = 27;
+const BOTTLE_HEIGHT = 18;
 const BENCH_WIDTH = 40;
 const BENCH_HEIGHT = 30;
 const GOAL_WIDTH = 45;
@@ -1042,8 +1042,8 @@ function create() {
   player = {
     x: 150,
     y: GROUND_Y,
-    width: 24,
-    height: 40,
+    width: 18,
+    height: 52,
     vx: 0,
     vy: 0,
     onGround: true,
